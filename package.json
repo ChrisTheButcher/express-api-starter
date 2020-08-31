@@ -2,7 +2,7 @@
   "name": "express-api-starter",
   "version": "1.2.0",
   "description": " A basic starter for an express.js API",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "start": "ts-node src",
     "lint": "tslint -c tslint.json 'src/**/*.ts' --fix",
