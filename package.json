@@ -4,16 +4,18 @@
   "description": " A basic starter for an express.js API",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
-    "lint": "eslint --fix src",
-    "test": "mocha --exit"
+    "start": "ts-node src",
+    "lint": "tslint -c tslint.json 'src/**/*.ts' --fix",
+    "prebuild": "npm run lint",
+    "build": "tsc",
+    "dev": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.{spec,test}.ts' --exec 'ts-node' src/index.ts",
+    "test": "ts-mocha -p tsconfig.json test/**/*.{spec,test}.ts"
   },
   "keywords": [],
-  "author": "CJ R. <cj@null.computer> (https://w3cj.now.sh)",
+  "author": "C.C. Wijnia <info@comwidedigital.com> (https://comwidedigital.com)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/w3cj/express-api-starter.git"
+    "url": "https://github.com/ChrisTheButcher/express-api-starter.git"
   },
   "license": "MIT",
   "dependencies": {
@@ -21,14 +23,23 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "helmet": "^4.1.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "typescript": "^4.0.2"
   },
   "devDependencies": {
-    "eslint": "^7.7.0",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.22.0",
+    "@types/supertest": "^2.0.10",
+    "@types/cors": "^2.8.7",
+    "@types/expect": "^24.3.0",
+    "@types/express": "^4.17.7",
+    "@types/helmet": "^0.0.48",
+    "@types/mocha": "^8.0.3",
+    "@types/morgan": "^1.9.1",
+    "@types/node": "^14.6.2",
     "mocha": "^8.1.2",
     "nodemon": "^2.0.4",
-    "supertest": "^4.0.2"
+    "supertest": "^4.0.2",
+    "ts-mocha": "^7.0.0",
+    "ts-node": "^9.0.0",
+    "tslint": "^6.1.3"
   }
 }

@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "rootDir": "src",
+    "module": "commonjs",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "outDir": "dist",
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2017",
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "noUnusedParameters": true,
+    "types": ["node", "express", "mocha", "cors", "morgan"],
+    "lib": ["es5", "es6", "dom"]
+  },
+  "compileOnSave": true,
+  "include": ["**/*.ts"],
+  "exclude": ["**/*.spec.ts"]
+}
